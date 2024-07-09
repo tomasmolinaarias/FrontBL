@@ -13,9 +13,11 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     });
 
     const data = await response.json();
+    console.log("🚀 ~ document.getElementById ~ data:", data)
     if (response.ok) {
-        localStorage.setItem('token', data.token);
-        window.location.href = '../../assets/page/dashboard.html';
+        localStorage.setItem("token", data.token);
+        alert("Inicio de sesión exitoso");
+        window.location.href = '../../assets/page/dashboard.html'; 
     } else {
         alert(data.message || 'Error al iniciar sesión');
     }

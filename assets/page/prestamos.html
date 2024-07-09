@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Préstamos</title>
+    <link rel="stylesheet" href="../style/prestamos.css">
+</head>
+<body>
+    <h1>Gestión de Préstamos</h1>
+    <div>
+        <h2>Agregar Préstamo</h2>
+        <form id="addLoanForm">
+            <label for="rut_alumno">RUT Alumno:</label>
+            <input type="text" id="rut_alumno" required>
+            <label for="id_libro">ID Libro:</label>
+            <input type="number" id="id_libro" required>
+            <label for="rut_bibliotecario">RUT Bibliotecario:</label>
+            <input type="text" id="rut_bibliotecario" required>
+            <button type="submit">Agregar Préstamo</button>
+        </form>
+    </div>
+
+    <div>
+        <h2>Lista de Préstamos</h2>
+        <ul id="loansList"></ul>
+    </div>
+
+    <div id="editFormContainer" style="display: none;">
+        <h2>Editar Préstamo</h2>
+        <form id="editLoanForm">
+            <input type="hidden" id="edit_id_prestamo">
+            <label for="edit_rut_alumno">RUT Alumno:</label>
+            <input type="text" id="edit_rut_alumno" required>
+            <label for="edit_id_libro">ID Libro:</label>
+            <input type="number" id="edit_id_libro" required>
+            <label for="edit_rut_bibliotecario">RUT Bibliotecario:</label>
+            <input type="text" id="edit_rut_bibliotecario" required>
+            <label for="edit_fecha_prestamo">Fecha Préstamo:</label>
+            <input type="date" id="edit_fecha_prestamo" required>
+            <select id="edit_estado_devolucion" required>
+                <option value="pendiente">Pendiente</option>
+                <option value="devuelta">Devuelta</option>
+                <option value="con retraso">Con Retraso</option>
+            </select>
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </div>
+
+    <script src="../js/prestamos.js"></script>
+</body>
+</html>

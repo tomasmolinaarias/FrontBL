@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Reservas</title>
+    <link rel="stylesheet" href="../style/reservas.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Reservas</h1>
+
+        <section>
+            <h2>Salas Disponibles</h2>
+            <ul id="salasList" class="salas-list"></ul>
+        </section>
+
+        <section id="reservationFormContainer" class="hidden">
+            <h2>Reservar Sala</h2>
+            <form id="reservationForm">
+                <input type="hidden" id="id_sala">
+                <label for="rut_alumno">RUT del Alumno:</label>
+                <input type="text" id="rut_alumno" required>
+                <label for="rut_bibliotecario">RUT del Bibliotecario:</label>
+                <input type="text" id="rut_bibliotecario" required>
+                <label for="hora_inicio">Hora de Inicio:</label>
+                <input type="time" id="hora_inicio" required>
+                <label for="hora_fin">Hora de Fin:</label>
+                <input type="time" id="hora_fin" readonly>
+                <button type="submit">Reservar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Lista de Reservas</h2>
+            <ul id="reservationsList" class="reservations-list"></ul>
+        </section>
+
+        <section id="editFormContainer" class="hidden">
+            <h2>Editar Reserva</h2>
+            <form id="editReservationForm">
+                <input type="hidden" id="edit_id_reserva">
+                <label for="edit_id_sala">ID de Sala:</label>
+                <input type="text" id="edit_id_sala" readonly>
+                <label for="edit_rut_alumno">RUT del Alumno:</label>
+                <input type="text" id="edit_rut_alumno" required>
+                <label for="edit_rut_bibliotecario">RUT del Bibliotecario:</label>
+                <input type="text" id="edit_rut_bibliotecario" required>
+                <label for="edit_hora_inicio">Hora de Inicio:</label>
+                <input type="time" id="edit_hora_inicio" required>
+                <label for="edit_hora_fin">Hora de Fin:</label>
+                <input type="time" id="edit_hora_fin" readonly>
+                <label for="edit_estado">Estado:</label>
+                <select id="edit_estado" required>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="devuelta">Devuelta</option>
+                    <option value="con retraso">Con Retraso</option>
+                </select>
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </section>
+    </div>
+    <script src="../js/reservas.js"></script>
+</body>
+</html>
