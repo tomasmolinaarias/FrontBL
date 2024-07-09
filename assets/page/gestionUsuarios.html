@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/gestionUsuarios.css">
+    <title>Gestión de Bibliotecario</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Usuarios</h1>
+        <div class="form-container">
+            <form id="userForm">
+                <input type="hidden" id="userId">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="correo_electronico">Correo Electrónico:</label>
+                <input type="email" id="correo_electronico" name="correo_electronico" required>
+                <label for="rol">Rol:</label>
+                <select id="rol" name="rol" required>
+                    <option value="bibliotecario">Bibliotecario</option>
+                    <option value="jefe_bibliotecario">Jefe Bibliotecario</option>
+                </select>
+                <label for="rut">RUT:</label>
+                <input type="text" id="rut" name="rut" required>
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+        <div class="user-list">
+            <h2>Lista de Usuarios</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo Electrónico</th>
+                        <th>Rol</th>
+                        <th>RUT</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../js/gestionUsuarios.js"></script>
+</body>
+</html>
